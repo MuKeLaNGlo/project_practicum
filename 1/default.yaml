@@ -1,0 +1,11 @@
+age: "36"
+date_create: "2023-11-01"
+first_name: Leonid
+last_name: Messi
+some_floats:
+  - 8.8232423432421342314
+  - 7.77
+  - 6.66
+  - 31534.45
+user_id: "3"
+_id: "3"
