@@ -1,11 +1,13 @@
-from io import StringIO
-from configparser import ConfigParser
 import json
 import os
-from utils.utils import read_file
+from configparser import ConfigParser
+from io import StringIO
+
 import xmltodict
 import yaml
 from ruamel.yaml import YAML
+
+from utils.utils import read_file
 
 
 def parse_file_to_types(file_path):

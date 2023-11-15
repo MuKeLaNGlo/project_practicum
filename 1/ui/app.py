@@ -1,6 +1,7 @@
 import customtkinter
-from ui.sidebar import SideBar
+
 from ui.main_frame import MainFrame
+from ui.sidebar import SideBar
 
 
 class App(customtkinter.CTk):

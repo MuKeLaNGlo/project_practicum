@@ -1,7 +1,8 @@
 # converters.py
-from io import StringIO
-from configparser import ConfigParser
 import json
+from configparser import ConfigParser
+from io import StringIO
+
 from dict2xml import dict2xml
 from ruamel.yaml import YAML
 

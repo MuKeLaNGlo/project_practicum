@@ -1,11 +1,10 @@
-from utils.converters import convert_to_file
-from utils.parsers import parse_file_to_types, parse_yaml, parse_yaml_to_types
-import customtkinter
 import os
-from PIL import Image
 
-from settings import BASE_DIR
-explorer_image = customtkinter.CTkImage(light_image=Image.open(f"{BASE_DIR}/images/explorer.png"), size=(25, 25))
+import customtkinter
+
+from settings import explorer_image
+from utils.converters import convert_to_file
+from utils.parsers import parse_file_to_types, parse_yaml
 
 
 class SideBar(customtkinter.CTkFrame):

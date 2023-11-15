@@ -1,10 +1,6 @@
-import os
 import customtkinter
-from PIL import Image
 
-from settings import BASE_DIR
-
-explorer_image = customtkinter.CTkImage(light_image=Image.open(f"{BASE_DIR}/images/explorer.png"), size=(25, 25))
+from settings import explorer_image
 
 
 class MainFrame(customtkinter.CTkFrame):
