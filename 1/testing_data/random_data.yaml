@@ -1,0 +1,27 @@
+user:
+  id: 123
+  username: random_user
+  email: random_user@example.comweg657usuy56d7uft7ijkty7uik
+  age: 28
+  preferences:
+    theme: dark
+    language: en
+    notifications:
+      email: true
+      push: true
+
+products:
+  - name: Product1
+    price: 19.99
+    quantity: 5
+  - name: Product2
+    price: 29.99
+    quantity: 10
+  - name: Product3
+    price: 9.99
+    quantity: 3
+
+settings:
+  debug_mode: false
+  logging_level: info
+  max_attempts: 3

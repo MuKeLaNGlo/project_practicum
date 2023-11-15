@@ -1,0 +1,36 @@
+<Root>
+  <User>
+    <Id>789</Id>
+    <Username>random_xml_user</Username>
+    <Email>random_xml_user@example.com</Email>
+    <Age>42</Age>
+  </User>
+
+  <Preferences>
+    <Theme>dark</Theme>
+    <Language>es</Language>
+    <EmailNotifications>true</EmailNotifications>
+    <PushNotifications>false</PushNotifications>
+  </Preferences>
+
+  <Products>
+    <Product1>
+      <Price>29.99</Price>
+      <Quantity>12</Quantity>
+    </Product1>
+    <Product2>
+      <Price>39.99</Price>
+      <Quantity>20</Quantity>
+    </Product2>
+    <Product3>
+      <Price>14.99</Price>
+      <Quantity>6</Quantity>
+    </Product3>
+  </Products>
+
+  <Settings>
+    <DebugMode>false</DebugMode>
+    <LoggingLevel>info</LoggingLevel>
+    <MaxAttempts>4</MaxAttempts>
+  </Settings>
+</Root>
