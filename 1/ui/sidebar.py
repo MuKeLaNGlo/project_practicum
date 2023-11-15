@@ -8,6 +8,24 @@ from utils.parsers import parse_file_to_types, parse_yaml
 
 
 class SideBar(customtkinter.CTkFrame):
+    """Класс боковой панели приложения.
+
+    Args:
+        master: Родительский виджет.
+        title: Заголовок боковой панели.
+        values: Список значений.
+        main_frame: Главный фрейм приложения.
+
+    Attributes:
+        main_frame: Главный фрейм приложения.
+        values (list): Список значений.
+        variable (customtkinter.StringVar): Переменная для хранения выбранного значения.
+        radiobuttons (list): Список радиокнопок.
+        load_button: Кнопка загрузки.
+        save_button: Кнопка сохранения.
+
+    """
+
     def __init__(self, master, title, values, main_frame):
         self.main_frame = main_frame
         super().__init__(master)
@@ -21,9 +39,11 @@ class SideBar(customtkinter.CTkFrame):
         self.create_widgets()
 
     def configure_layout(self):
+        """Настройка макета."""
         self.grid_columnconfigure(1, weight=1)
 
     def create_widgets(self):
+        """Создание виджетов."""
         self.label1 = customtkinter.CTkLabel(
             self,
             text="Расширение файла\n\n----",
@@ -49,6 +69,18 @@ class SideBar(customtkinter.CTkFrame):
             self.radiobuttons.append(radiobutton)
 
     def create_button(self, text, command, row, state='normal'):
+        """Создание кнопки.
+
+        Args:
+            text (str): Текст кнопки.
+            command: Функция-обработчик нажатия на кнопку.
+            row: Ряд, в котором будет размещена кнопка.
+            state (str): Состояние кнопки (normal, disabled).
+
+        Returns:
+            customtkinter.CTkButton: Созданная кнопка.
+
+        """
         button = customtkinter.CTkButton(
             self,
             text=text,
@@ -64,6 +96,7 @@ class SideBar(customtkinter.CTkFrame):
         return button
 
     def load_button_callback(self):
+        """Обработчик нажатия кнопки Load."""
         file_path = self.main_frame.file_path_field.get("1.0", "end-1c")
         try:
             _, extension = os.path.splitext(file_path)
@@ -83,6 +116,7 @@ class SideBar(customtkinter.CTkFrame):
             print("File not found.")
 
     def convert_button_callback(self):
+        """Обработчик нажатия кнопки Convert."""
         selected_option = self.variable.get().lower()
         file_path = self.main_frame.file_path_field.get("1.0", "end-1c")
 
@@ -94,11 +128,16 @@ class SideBar(customtkinter.CTkFrame):
                 self.main_frame.edit_box.delete("1.0", "end-1c")
                 self.main_frame.edit_box.insert("1.0", converted_content)
 
-
         except Exception as e:
             print(f"Error during conversion: {e}")
 
     def pick_path(self, file_path_field):
+        """Выбор пути для сохранения файла.
+
+        Args:
+            file_path_field: Поле для отображения выбранного пути.
+
+        """
         file_path = customtkinter.filedialog.asksaveasfilename(
             filetypes=[
                 ("YAML files", "*.yaml"),
@@ -115,6 +154,12 @@ class SideBar(customtkinter.CTkFrame):
             file_path_field.configure(state="disabled")
 
     def save(self, file_path_field):
+        """Сохранение содержимого в файл.
+
+        Args:
+            file_path_field: Поле с путем для сохранения файла.
+
+        """
         file_path = file_path_field.get("1.0", "end-1c").strip()
 
         if not file_path:
@@ -130,6 +175,7 @@ class SideBar(customtkinter.CTkFrame):
             print(f"Error saving content: {e}")
 
     def save_button_callback(self):
+        """Обработчик нажатия кнопки Save."""
         save_window = customtkinter.CTkToplevel()
         save_window.title("Save Window")
         save_window.geometry("700x250")
@@ -158,5 +204,11 @@ class SideBar(customtkinter.CTkFrame):
         save_button.grid(row=2, column=0, pady=(30, 0), padx=10, columnspan=3)
 
     def update_edit_box(self, data):
+        """Обновление содержимого поля редактирования.
+
+        Args:
+            data: Данные для отображения.
+
+        """
         self.main_frame.edit_box.delete("1.0", "end-1c")
         self.main_frame.edit_box.insert("1.0", data)

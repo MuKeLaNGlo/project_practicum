@@ -4,12 +4,26 @@ from settings import explorer_image
 
 
 class MainFrame(customtkinter.CTkFrame):
+    """Класс главного фрейма приложения.
+
+    Args:
+        master: Родительский виджет.
+        title: Заголовок фрейма.
+        values: Список значений.
+
+    Attributes:
+        file_path_field (customtkinter.CTkTextbox): Поле для отображения пути к файлу.
+        explorer_button (customtkinter.CTkButton): Кнопка для вызова диалога выбора файла.
+        edit_box (customtkinter.CTkTextbox): Поле редактирования для отображения содержимого файла.
+
+    """
+
     def __init__(self, master, title, values):
         super().__init__(master)
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(1, weight=1)
 
-        self.file_path_field = customtkinter.CTkTextbox(
+        self.file_path_field: customtkinter.CTkTextbox = customtkinter.CTkTextbox(
             master=self, height=28, corner_radius=6
         )
         self.file_path_field.grid(
@@ -20,7 +34,7 @@ class MainFrame(customtkinter.CTkFrame):
         )
         self.file_path_field.configure(state="disabled")
 
-        self.explorer_button = customtkinter.CTkButton(
+        self.explorer_button: customtkinter.CTkButton = customtkinter.CTkButton(
             self,
             text="",
             height=28,
@@ -35,7 +49,7 @@ class MainFrame(customtkinter.CTkFrame):
             sticky="ew"
         )
 
-        self.edit_box = customtkinter.CTkTextbox(
+        self.edit_box: customtkinter.CTkTextbox = customtkinter.CTkTextbox(
             master=self, height=700, corner_radius=6
         )
         self.edit_box.grid(
@@ -45,6 +59,7 @@ class MainFrame(customtkinter.CTkFrame):
         )
 
     def explorer_button_callback(self):
+        """Обработчик нажатия кнопки Explorer."""
         file_path = customtkinter.filedialog.askopenfilename(
             filetypes=[
                 ("All files", ("*.yaml", "*.ini", "*.xml", "*.json")),

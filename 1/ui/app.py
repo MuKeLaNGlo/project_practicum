@@ -5,6 +5,14 @@ from ui.sidebar import SideBar
 
 
 class App(customtkinter.CTk):
+    """Класс приложения конвертера файлов.
+
+    Attributes:
+        main_frame (MainFrame): Главный фрейм приложения.
+        sidebar_frame (SideBar): Боковая панель приложения.
+
+    """
+
     def __init__(self):
         super().__init__()
 
@@ -13,7 +21,7 @@ class App(customtkinter.CTk):
         self.grid_columnconfigure((1, 1), weight=1)
         self.grid_rowconfigure(0, weight=1)
 
-        self.main_frame = MainFrame(
+        self.main_frame: MainFrame = MainFrame(
             self, "Options", values=["option 1", "option 2"]
         )
         self.main_frame.grid(
@@ -21,7 +29,7 @@ class App(customtkinter.CTk):
             padx=(0, 10), pady=(10, 10),
             sticky="nsew", columnspan=1
         )
-        self.sidebar_frame = SideBar(
+        self.sidebar_frame: SideBar = SideBar(
             self,
             title="Values",
             values=["value 1", "value 2", "value 3"],
@@ -34,5 +42,6 @@ class App(customtkinter.CTk):
         )
 
     def button_callback(self):
+        """Обработчик нажатия кнопки."""
         print("checkbox_frame:", self.checkbox_frame.get())
         print("radiobutton_frame:", self.radiobutton_frame.get())
