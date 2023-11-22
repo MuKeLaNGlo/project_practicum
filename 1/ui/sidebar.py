@@ -191,7 +191,13 @@ class SideBar(customtkinter.CTkFrame):
         file_path_field.configure(state="disabled")
         file_path_field.grid(row=1, column=0, pady=10, padx=10, sticky="ew")
 
-        pick_button = customtkinter.CTkButton(save_window, text="", width=28, command=lambda: self.pick_path(file_path_field), image=explorer_image)
+        pick_button = customtkinter.CTkButton(
+            save_window,
+            text="",
+            width=28,
+            command=lambda: self.pick_path(file_path_field),
+            image=explorer_image
+        )
         pick_button.grid(row=1, column=2, pady=10, padx=10, sticky="ew")
         save_button = customtkinter.CTkButton(
             save_window,
