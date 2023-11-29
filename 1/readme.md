@@ -49,4 +49,5 @@ python main.py
 
 ![Пример работы приложения](src/example.png)
 ## Команда проекта
-#### [Каранинский Михаил](https://github.com/MuKeLaNGlo) — Главный разработчик
+#### [Каранинский Михаил](https://github.com/MuKeLaNGlo)
+#### [Валитов Радик](https://github.com/Radik3451)
