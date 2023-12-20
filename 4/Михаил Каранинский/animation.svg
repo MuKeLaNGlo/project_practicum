@@ -1,9 +1,10 @@
-<svg class="fade-in" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<svg class="fade-in" height="1000" width="1000" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
 
   <text text-anchor="middle"
         x="50%"
         y="50%"
-        dy="50px"
+        dy="0"
+        font-size="16"
         class="txtTitle fade-in wave">
       SVG Text
   </text>
@@ -14,22 +15,9 @@
            repeatCount="indefinite"
            keyTimes="0;0.5;1"/>
 
-  <animate attributeName="transform"
-           type="translate"
-           values="0 0;0 -10px;0 0"
-           dur="2s"
-           repeatCount="indefinite"
-           keyTimes="0;0.5;1"/>
-
-  <animate attributeName="fill"
-           values="blue;green;blue"
-           dur="4s"
-           repeatCount="indefinite"
-           keyTimes="0;0.5;1"/>
-
-  <animateMotion dur="3s" repeatCount="indefinite" keyPoints="0;0.5;1" keyTimes="0;0.5;1">
+  <animateMotion dur="3s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1">
     <mpath href="#motionPath"/>
   </animateMotion>
 
-  <path id="motionPath" d="M100 100 Q 200 200 300 100 T 500 100" fill="transparent"/>
+  <path id="motionPath" d="M100 100 A80 80 0 1 0 100.01 100" fill="transparent"/>
 </svg>
