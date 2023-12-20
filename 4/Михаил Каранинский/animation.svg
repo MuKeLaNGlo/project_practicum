@@ -1,9 +1,10 @@
-<svg class="fade-in" height="1000" width="1000" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
+<svg class="fade-in" height="1000" width="1000" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
 
   <text text-anchor="middle"
         x="50%"
         y="50%"
         dy="0"
+        font-size="16"
         class="txtTitle fade-in wave">
       SVG Text
   </text>
@@ -18,5 +19,5 @@
     <mpath href="#motionPath"/>
   </animateMotion>
 
-  <path id="motionPath" d="M300 150 A150 150 0 1 0 300 149.99" fill="transparent"/>
+  <path id="motionPath" d="M100 100 A80 80 0 1 0 100.01 100" fill="transparent"/>
 </svg>
